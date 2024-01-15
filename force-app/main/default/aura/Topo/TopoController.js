@@ -1,7 +1,8 @@
 
 ({
     doInit: function(cmp) {
-        Math.random() < 0.5 ? $A.util.addClass(cmp, 'active') : $A.util.addClass(cmp, 'inactive') ;
+        var topo = cmp.find("topo");
+        Math.random() < 0.5 ? $A.util.addClass(topo, 'active') : $A.util.addClass(topo, 'inactive') ;
         
         // var number =Math.random() ;
         // if(number < 0.5){
