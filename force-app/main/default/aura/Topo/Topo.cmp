@@ -1,5 +1,5 @@
 <aura:component>
 	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
-	<aura:application type="boolean" name="isTopo"/>
+	<aura:attribute type="Boolean" name="isTopo"/>
 	<span class="topo" aura:id="topo" onclick="{!c.topoClick}">5</span> 
-</aura:component>	
+</aura:component>

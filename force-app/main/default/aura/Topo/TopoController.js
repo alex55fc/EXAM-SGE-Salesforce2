@@ -18,10 +18,13 @@
         // this function trigger an event
         // fire the event using that event name
         var isTopo = cmp.get("v.isTopo");
+        console.log("isTopo: " + isTopo);
         var evt = $A.get("e.c:Puntuacion");
+        console.log("evt: " + evt);
         evt.setParams({
-            "molePoints": isTopo ? 2 : 0 
+            "molePoint": isTopo ? 2 : 0 
         });
         evt.fire();
+    }
 })
 
