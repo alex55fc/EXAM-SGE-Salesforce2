@@ -6,10 +6,10 @@
         
         var number =Math.random() ;
         if(number < 0.5){
-            $A.util.addClass(cmp, 'active');
+            $A.util.addClass(topo, 'active');
             cmp.set("v.isTopo",true)
         }else{
-            $A.util.addClass(cmp, 'inactive');
+            $A.util.addClass(topo, 'inactive');
             cmp.set("v.isTopo",false)
         }
     
