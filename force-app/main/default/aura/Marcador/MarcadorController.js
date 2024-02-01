@@ -13,7 +13,7 @@
         component.set("v.marcador", marcador);
     },
     guardarScore : function(component, event, helper) {
-        var insertScoreApex = cmp.get("c.insertScore");
+        var insertScoreApex = component.get("c.insertScore");
 
         insertScoreApex.setCallback(this, function(response){
             var state = response.getState();
@@ -27,7 +27,7 @@
              "puntuacion": component.get("v.marcador")
          });
 
-        $A.enqueueAction(randomNumberGenerator);
+        $A.enqueueAction(insertScoreApex);
 
     },
 })
