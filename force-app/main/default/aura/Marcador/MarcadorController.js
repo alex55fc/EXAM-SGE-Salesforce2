@@ -11,5 +11,23 @@
             marcador += pointsToAdd;
         }
         component.set("v.marcador", marcador);
-    }
+    },
+    guardarScore : function(component, event, helper) {
+        var insertScoreApex = cmp.get("c.insertScore");
+
+        insertScoreApex.setCallback(this, function(response){
+            var state = response.getState();
+            if(state === "SUCCESS"){
+                alert("exito")
+            }
+        });
+
+        insertScoreApex.setParams({
+             "nombre": "vuestronombre",
+             "puntuacion": component.get("v.marcador")
+         });
+
+        $A.enqueueAction(randomNumberGenerator);
+
+    },
 })
