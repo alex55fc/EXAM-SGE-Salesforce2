@@ -11,14 +11,14 @@ public with sharing class RandomApex {
 
     @AuraEnabled
     public static Void insertScore(String nombre, String puntuacion) {
-        Account account = new Account(Name=nombre, BillingCity=puntuacion);
+        Account account = new Account(Name=nombre, DunsNumber=puntuacion);
         insert account;
     }
  
     @AuraEnabled
     public static List<Account> getListScores(){
         try {
-            Account[] accounts = [SELECT Name, BillingCity FROM Account];
+            Account[] accounts = [SELECT Name, DunsNumber FROM Account];
             return accounts;
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());

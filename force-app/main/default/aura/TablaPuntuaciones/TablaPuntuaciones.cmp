@@ -10,7 +10,7 @@
 			<aura:iteration items="{!v.puntuaciones}" var="puntuacion">
 				<tr>
 					<td>{!puntuacion.Name}</td>
-					<td>{!puntuacion.BillingCity}</td>
+					<td>{!puntuacion.DunsNumber}</td>
 				</tr>
 			</aura:iteration>
 		</tbody>
