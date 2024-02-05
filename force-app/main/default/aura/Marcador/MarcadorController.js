@@ -13,8 +13,9 @@
         component.set("v.marcador", marcador);
     },
     guardarScore : function(component, event, helper) {
-        var insertScoreApex = component.get("c.insertScore");
-
+        var insertScoreApex = component.get("c.insertScore"); 
+        var jugador = component.find("nombrejugador").getElement().value;
+        console.log("jugador: " + component.find("nombrejugador").getElement().value);
         insertScoreApex.setCallback(this, function(response){
             var state = response.getState();
             if(state === "SUCCESS"){
@@ -23,7 +24,7 @@
         });
 
         insertScoreApex.setParams({
-             "nombre": "vuestronombre",
+             "nombre": jugador,
              "puntuacion": component.get("v.marcador")
          });
 
