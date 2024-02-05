@@ -14,7 +14,7 @@ public with sharing class RandomApex {
         Account account = new Account(Name=nombre, BillingCity=puntuacion);
         insert account;
     }
-
+ 
     @AuraEnabled
     public static List<Account> getListScores(){
         try {

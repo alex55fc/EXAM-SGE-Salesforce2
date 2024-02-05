@@ -1,7 +1,7 @@
 <aura:component controller="RandomApex">
 	<aura:attribute name="puntuaciones" type="Account[]"/>
 	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
-	<table>
+	<table> 
 		<tbody>
 			<tr>
 				<th>Nombre</th>

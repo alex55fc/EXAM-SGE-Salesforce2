@@ -1,12 +1,16 @@
 <aura:application>
-	<c:topo/>
-	<c:topo/>
-	<c:topo/>
-	<c:topo/>  
-	<c:topo/>  
-	<c:topo/>
-	<c:topo/> 
-	<c:topo/>
-	<c:topo/>
+	<c:Topo/>
+	<c:Topo/> 
+	<c:Topo/> 
+	<c:Topo/> 
+	<c:Topo/> 
+	<c:Topo/> 
+	<c:Topo/>    
+	<c:Topo/> 
 	<c:Marcador/>
-</aura:application>	
+	<div/>
+	<div/>
+	<div/>
+	<div/>
+	<c:TablaPuntuaciones/>
+</aura:application>

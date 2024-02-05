@@ -2,19 +2,20 @@
     myAction : function(component, event, helper) {
 
     },
-    doInit: function(cmp) {
+    doInit: function(component) {
     
-        var randomNumberGenerator = cmp.get("c.getListScores");
+        var getListScores = component.get("c.getListScores");
 
-        randomNumberGenerator.setCallback(this, function(response){
+        getListScores.setCallback(this, function(response){
             var state = response.getState();
             if(state === "SUCCESS"){
-                var number = response.getReturnValue();
+                var accounts = response.getReturnValue();
+                component.set("v.puntuaciones", accounts);
                 
             }
         });
 
-        $A.enqueueAction(randomNumberGenerator);
+        $A.enqueueAction(getListScores);
 
     }
 })
