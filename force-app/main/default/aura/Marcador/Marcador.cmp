@@ -2,5 +2,5 @@
 	<aura:handler event="c.Puntuacion" action="{!c.manejarEvento}"/>
 	<aura:attribute name="marcador" type="Integer" default="0"/>
 	tu marcador es {!v.marcador}
-	<input type="button" onclick="{!c.guardarScore}"/>  
+	<input type="button" onclick="{!c.guardarScore}" value="Guardar"/>  
 </aura:component>	
