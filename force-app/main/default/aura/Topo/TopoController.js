@@ -17,7 +17,8 @@
                     if (number < 0.5) {
                         $A.util.addClass(topo, 'active');
                         toposActivos++;
-                        console.log("topo activados ", toposActivos);
+                        console.log("topo activado ");
+                        cmp.set("v.toposActivos", toposActivos);
                     } else {
                         $A.util.addClass(topo, 'inactive');
                     }
@@ -27,18 +28,19 @@
         });
     },
     topoClick: function(cmp, event, helper) {
+        //ver cuantos topos estan activos
+        var toposActivos = cmp.get("v.toposActivos");
+        console.log("topos activos: " + toposActivos);
         var topo = event.target; // Obtener el elemento del DOM que desencadenó el evento
 
         // Comprobar si el topo tiene la clase 'active'
         var isActive = topo.classList.contains('active');
-    
-        // Definir la cantidad de puntos basados en si el topo está activo o no
-        var molePoints = isActive ? 2 : 0;
+         
     
         // Crear y lanzar el evento con los puntos correspondientes
         var evt = $A.get("e.c:Puntuacion");
         evt.setParams({
-            "molePoint": molePoints
+            "molePoint": isActive ? 2 : 0
         });
         evt.fire();
     }
