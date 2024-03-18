@@ -19,7 +19,7 @@
         insertScoreApex.setCallback(this, function(response){
             var state = response.getState();
             if(state === "SUCCESS"){
-                alert("exito")
+                alert("Exito al guardar datos del Jugador 2!!")
             }
         });
 

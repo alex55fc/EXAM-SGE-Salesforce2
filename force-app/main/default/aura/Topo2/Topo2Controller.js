@@ -17,7 +17,7 @@
                     if (number < 0.5) {
                         $A.util.addClass(topo, 'active');
                         toposActivos++;
-                        console.log("topo activado ");
+                        console.log("Topo activado jugador 2 ");
                         cmp.set("v.toposActivos", toposActivos);
                     } else {
                         $A.util.addClass(topo, 'inactive');
@@ -39,16 +39,18 @@
             toposActivos--;
             cmp.set("v.toposActivos", toposActivos);
             if(toposActivos == 0){
-                var evt = $A.get("e.c:Puntuacion2");
+                var evt = $A.get("e.c:Puntuacion");
                 evt.setParams({
+                    "molePoint": 0,
                     "molePoint2": isActive? 1 : 0
                 });
                 evt.fire();
             }
         }
         else {
-            var evt = $A.get("e.c:Puntuacion2");
+            var evt = $A.get("e.c:Puntuacion");
             evt.setParams({
+                "molePoint": 0,
                 "molePoint2":  0                
             });
             evt.fire();

@@ -1,3 +1,5 @@
 <aura:event type="APPLICATION" description="Event template">
-	<aura:attribute name="molePoint" type="Integer"/>  
+	<aura:attribute name="molePoint" type="Integer"/> 
+	<aura:attribute name="molePoint2" type="Integer"/>  
+ 
 </aura:event> 
