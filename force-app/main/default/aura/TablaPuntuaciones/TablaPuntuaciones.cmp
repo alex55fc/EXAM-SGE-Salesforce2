@@ -15,4 +15,5 @@
 			</aura:iteration>
 		</tbody>
 	</table>
+	
 </aura:component>	
