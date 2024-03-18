@@ -1,6 +1,7 @@
 <aura:component controller="RandomApex">
 	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 	<aura:attribute type="Boolean" name="isTopo"/>
+	<aura:attribute type="Integer" name="toposActivos" default="0"/>
 	<span class="topo" aura:id="topo" onclick="{!c.topoClick}">5</span> 
 	<span class="topo" aura:id="topo1" onclick="{!c.topoClick}">5</span> 
 	<span class="topo" aura:id="topo2" onclick="{!c.topoClick}">5</span> 

@@ -3,7 +3,7 @@
     doInit: function(cmp) {
         // Lista de identificadores de los topos
         var topoIds = ["topo", "topo1", "topo2", "topo3", "topo4", "topo5", "topo6"];
-
+        var toposActivos = cmp.get("v.toposActivos");
         // Iterar sobre cada identificador de topo
         topoIds.forEach(function(topoId) {
             var topo = cmp.find(topoId);
@@ -15,6 +15,8 @@
                     var number = response.getReturnValue();
                     if (number < 0.5) {
                         $A.util.addClass(topo, 'active');
+                        toposActivos++;
+                        console.log("topo activados ", toposActivos);
                     } else {
                         $A.util.addClass(topo, 'inactive');
                     }
@@ -28,16 +30,20 @@
 
         // Comprobar si el topo tiene la clase 'active'
         var isActive = topo.classList.contains('active');
+        if (isActive) {
+            toposActivos--;
+            if(toposActivos == 0){
+                var molePoints = isActive ? 1 : 0;
     
-        // Definir la cantidad de puntos basados en si el topo está activo o no
-        var molePoints = isActive ? 2 : 0;
-    
-        // Crear y lanzar el evento con los puntos correspondientes
-        var evt = $A.get("e.c:Puntuacion");
-        evt.setParams({
-            "molePoint": molePoints
-        });
-        evt.fire();
+                // Crear y lanzar el evento con los puntos correspondientes
+                var evt = $A.get("e.c:Puntuacion");
+                evt.setParams({
+                    "molePoint": molePoints
+                });
+                evt.fire();
+            }
+        }
+       
     }
 })
 
