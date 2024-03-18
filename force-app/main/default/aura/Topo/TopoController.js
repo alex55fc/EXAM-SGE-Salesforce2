@@ -47,6 +47,14 @@
                 evt.fire();
             }
         }
+        else {
+            var evt = $A.get("e.c:Puntuacion");
+            evt.setParams({
+                "molePoint": 0
+                
+            });
+            evt.fire();
+        }
     }
 })
 

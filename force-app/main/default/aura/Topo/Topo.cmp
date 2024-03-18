@@ -9,7 +9,4 @@
 	<span class="topo" aura:id="topo4" onclick="{!c.topoClick}">5</span> 
 	<span class="topo" aura:id="topo5" onclick="{!c.topoClick}">5</span> 
 	<span class="topo" aura:id="topo6" onclick="{!c.topoClick}">5</span> 
-
-
-
 </aura:component> 
