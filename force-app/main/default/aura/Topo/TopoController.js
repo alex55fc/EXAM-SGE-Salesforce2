@@ -31,18 +31,22 @@
         //ver cuantos topos estan activos
         var toposActivos = cmp.get("v.toposActivos");
         console.log("topos activos: " + toposActivos);
-        var topo = event.target; // Obtener el elemento del DOM que desencadenó el evento
 
-        // Comprobar si el topo tiene la clase 'active'
+        var topo = event.target; // Obtener el elemento del DOM que desencadenó el evento
         var isActive = topo.classList.contains('active');
          
-    
-        // Crear y lanzar el evento con los puntos correspondientes
-        var evt = $A.get("e.c:Puntuacion");
-        evt.setParams({
-            "molePoint": isActive ? 2 : 0
-        });
-        evt.fire();
+        if (isActive) {
+            toposActivos--;
+            cmp.set("v.toposActivos", toposActivos);
+            if(toposActivos == 0){
+                var evt = $A.get("e.c:Puntuacion");
+                evt.setParams({
+                    "molePoint": isActive ? 1 : 0
+                    
+                });
+                evt.fire();
+            }
+        }
     }
 })
 
