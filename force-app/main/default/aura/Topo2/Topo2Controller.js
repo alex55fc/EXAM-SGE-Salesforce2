@@ -3,7 +3,7 @@
 
     doInit: function(cmp) {
         // Lista de identificadores de los topos
-        var topoIds = ["topo", "topo1", "topo2", "topo3", "topo4", "topo5", "topo6"];
+        var topoIds = ["topo00", "topo11", "topo22", "topo33", "topo44", "topo55", "topo66"];
         var toposActivos = cmp.get("v.toposActivos");
         // Iterar sobre cada identificador de topo
         topoIds.forEach(function(topoId) {
@@ -30,7 +30,7 @@
     topoClick: function(cmp, event, helper) {
         //ver cuantos topos estan activos
         var toposActivos = cmp.get("v.toposActivos");
-        console.log("Topos activos del jugador 1: " + toposActivos);
+        console.log("Topos activos del jugador 2: " + toposActivos);
 
         var topo = event.target; // Obtener el elemento del DOM que desencadenó el evento
         var isActive = topo.classList.contains('active');
@@ -39,17 +39,17 @@
             toposActivos--;
             cmp.set("v.toposActivos", toposActivos);
             if(toposActivos == 0){
-                var evt = $A.get("e.c:Puntuacion");
+                var evt = $A.get("e.c:Puntuacion2");
                 evt.setParams({
-                    "molePoint": isActive ? 1 : 0,
+                    "molePoint2": isActive? 1 : 0
                 });
                 evt.fire();
             }
         }
         else {
-            var evt = $A.get("e.c:Puntuacion");
+            var evt = $A.get("e.c:Puntuacion2");
             evt.setParams({
-                "molePoint": 0,
+                "molePoint2":  0                
             });
             evt.fire();
         }
